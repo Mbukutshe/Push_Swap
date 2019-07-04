@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/04 10:45:56 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/04 16:11:18 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void		ft_reverse_a(stack_a *a);
 void		ft_reverse_b(stack_b *b);
 void		ft_shift_both(stack_a *a, stack_b *b);
 void		ft_reverse_both(stack_a *a, stack_b *b);
+void		ft_push_both(stack_a *a, stack_b *b);
+void		ft_swap_both(stack *a, stack_b *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:11:38 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/04 08:46:05 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/04 16:11:57 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,10 @@ void		ft_swap_b(stack_b *b)
 	ptr->next->v = ptr->next->next->v;
 	ptr->next->next->v = temp;
 	free(ptr);
+}
+
+void		ft_swap_both(stack_a *a, stack_b *b)
+{
+	ft_swap_a(*a);
+	ft_swap_b(*b);
 }

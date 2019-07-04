@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 14:31:56 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/04 09:05:10 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/04 16:07:38 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,10 @@ void		ft_push_b(stack_a *b, stack_b *b)
 	*b = ptr_b;
 	ft_memdel(&ptr_b);
 	ft_memdel(&ptr_a);
+}
+
+void		ft_push_both(stack_a *a, stack_b *b)
+{
+	ft_push_a(*a);
+	ft_push_b(*b);
 }
