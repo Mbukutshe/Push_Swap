@@ -6,14 +6,17 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/05 19:33:12 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/05 20:25:28 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			ft_range(int c, char **argv)
+int			ft_parse_int(char *value)
 {
+	if (ft_atoi(value))
+		return (1);
+	return (0);
 }
 
 int			ft_exist(char *str)
