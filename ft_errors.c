@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/05 20:25:28 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/05 20:41:05 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 int			ft_parse_int(char *value)
 {
 	if (ft_atoi(value))
+		return (1);
+	return (0);
+}
+
+int			ft_range(char *value)
+{
+	int		num;
+
+	num = ft_atoi(value);
+	if (ft_strequ(value, ft_itoa(num)))
 		return (1);
 	return (0);
 }
