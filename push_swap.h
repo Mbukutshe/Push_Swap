@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/05 20:38:37 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/05 21:02:14 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ int			ft_exist(char *str);
 void		ft_populate(stack_a *head, int value);
 int			ft_parse_int(char *value);
 int			ft_range(char *value);
+int			ft_dup(stack_a *head);
 
 #endif
