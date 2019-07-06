@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/05 23:11:07 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/06 07:38:36 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,23 @@
 typedef struct node
 {
 	int			v;
-	struct node	*next
-	
-}stack_a;
-
-typedef struct node
-{
-	int			v;
 	struct node	*next;
-}stack_b;
+	
+}stack_a, stack_b;
 
-int			ft_list_size(node *head);
+int			ft_list_size(struct node *head);
 void		ft_swap_a(stack_a *a);
 void		ft_swap_b(stack_b *b);
-void		ft_push_a(stack_a *a, stack_b *b);
-void		ft_push_b(stack_a *a, stack_b *b);
-void		ft_shift_a(stack_a *a);
-void		ft_shift_b(stack_b *b);
-void		ft_reverse_a(stack_a *a);
-void		ft_reverse_b(stack_b *b);
-void		ft_shift_both(stack_a *a, stack_b *b);
-void		ft_reverse_both(stack_a *a, stack_b *b);
-void		ft_push_both(stack_a *a, stack_b *b);
-void		ft_swap_both(stack *a, stack_b *b);
-int			ft_range(int c, char *argv);
+void		ft_push_a(stack_a **a, stack_b *b);
+void		ft_push_b(stack_a **a, stack_b *b);
+void		ft_shift_a(stack_a **a);
+void		ft_shift_b(stack_b **b);
+void		ft_reverse_a(stack_a **a);
+void		ft_reverse_b(stack_b **b);
+void		ft_shift_both(stack_a **a, stack_b **b);
+void		ft_reverse_both(stack_a **a, stack_b **b);
+void		ft_push_both(stack_a **a, stack_b **b);
+void		ft_swap_both(stack_a *a, stack_b *b);
 int			ft_exist(char *str);
 void		ft_populate(stack_a *head, char **stack);
 int			ft_parse_int(char *value);

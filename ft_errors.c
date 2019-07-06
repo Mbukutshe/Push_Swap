@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/05 22:29:44 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/06 07:03:51 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int			ft_dup(stack_a *head)
 		current = head;
 		while (current->next != NULL)
 		{
-			if (current->next->val == val)
+			if (current->next->v == val)
 				return (1);
 			current = current->next;
 		}

@@ -6,18 +6,18 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 09:09:22 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/04 10:45:37 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/06 07:25:41 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_shift_a(stack_a *a)
+void		ft_shift_a(stack_a **a)
 {
 	stack_a *ptr;
 	int		value;
 
-	ptr = a;
+	ptr = *a;
 	value = ptr->v;
 	while (ptr->next != NULL)
 		ptr = ptr->next;
@@ -29,12 +29,12 @@ void		ft_shift_a(stack_a *a)
 	free(ptr);
 }
 
-void		ft_shift_b(stack_b *b)
+void		ft_shift_b(stack_b **b)
 {
 	stack_b *ptr;
 	int		value;
 
-	ptr = b;
+	ptr = *b;
 	value = ptr->v;
 	while (ptr->next != NULL)
 		ptr = ptr->next;
@@ -46,8 +46,8 @@ void		ft_shift_b(stack_b *b)
 	free(ptr);
 }
 
-void		ft_shift_both(stack_a *a, stack_b *b)
+void		ft_shift_both(stack_a **a, stack_b **b)
 {
-	ft_shift_a(stack_a *a);
-	ft_shift_b(stack_b *b);
+	ft_shift_a(a);
+	ft_shift_b(b);
 }
