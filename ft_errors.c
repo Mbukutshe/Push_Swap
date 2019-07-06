@@ -6,11 +6,22 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/05 21:01:29 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/05 22:29:44 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int			ft_check(char **stack)
+{
+	int		i;
+
+	i = 0;
+	while (stack[i])
+		if (ft_range(stack[i]) == 0 || ft_parse_int(stack[i]) == 0)
+			return (1);
+	return (0);
+}
 
 int			ft_parse_int(char *value)
 {
@@ -37,7 +48,7 @@ int			ft_dup(stack_a *head)
 	int		size;
 	int		val;
 
-	i = 0;
+	i = 1;
 	ptr = head;
 	val = ptr->v;
 	size = ft_list_size(current);
