@@ -6,11 +6,11 @@
 #    By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/02 14:38:46 by kmbukuts          #+#    #+#              #
-#    Updated: 2019/07/06 06:31:01 by kmbukuts         ###   ########.fr        #
+#    Updated: 2019/07/06 06:41:14 by kmbukuts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = checker
+NAME = checker push_swap
 
 SRC = checker.c ft_swap.c ft_push.c ft_rotate.c \
 	  ft_reverse.c ft_list.c ft_errors.c
