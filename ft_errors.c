@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/06 07:03:51 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/09 08:46:05 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int			ft_dup(stack_a *head)
 	i = 1;
 	ptr = head;
 	val = ptr->v;
-	size = ft_list_size(current);
+	size = ft_list_size(ptr);
 	while (i < size)
 	{
 		current = head;

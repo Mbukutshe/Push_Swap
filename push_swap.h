@@ -6,16 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/06 07:38:36 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/09 09:01:14 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
 # include "./get_next_line/get_next_line.h"
 # include "./get_next_line/libft/libft.h"
 
@@ -44,5 +41,6 @@ void		ft_populate(stack_a *head, char **stack);
 int			ft_parse_int(char *value);
 int			ft_range(char *value);
 int			ft_dup(stack_a *head);
+int			ft_check(char **stack);
 
 #endif

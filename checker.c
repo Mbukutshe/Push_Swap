@@ -6,13 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:21:47 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/05 23:23:06 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/09 09:07:58 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int argc, char **argv)
+int		main(int c, char **argv)
 {
 	static stack_a	*stack;
 	static stack_b	*temp;
@@ -22,11 +22,11 @@ int		main(int argc, char **argv)
 		return (0);
 	if ((temp = malloc(sizeof(stack_b))) == NULL)
 		return (0);
-	if (c == 2)
+	if (c >= 1)
 	{
 		if (!stack)
 		{
-			res = ft_split(argv[1], ' ');
+			res = ft_strsplit(argv[1], ' ');
 			if (ft_check(res))
 			{
 				ft_putendl("Error");
