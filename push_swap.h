@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/09 09:01:14 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/10 17:13:23 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct node
 {
 	int			v;
+	int			p;
 	struct node	*next;
 	
 }stack_a, stack_b;

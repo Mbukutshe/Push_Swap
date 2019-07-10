@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:21:47 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/09 09:07:58 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/10 17:20:05 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ int		main(int c, char **argv)
 		return (0);
 	if ((temp = malloc(sizeof(stack_b))) == NULL)
 		return (0);
-	if (c >= 1)
+	if (c > 1 && ft_strequ(argv[1], "") == 0)
 	{
-		if (!stack)
+		if (stack != NULL)
 		{
 			res = ft_strsplit(argv[1], ' ');
 			if (ft_check(res))
 			{
-				ft_putendl("Error");
+				ft_putendl_fd("Error", 2);
 				return (0);
 			}
 			ft_populate(stack, res);
 			if (ft_dup(stack))
 			{
-				ft_putendl("Error");
+				ft_putendl_fd("Error", 2);
 				return (0);
 			}
 		}

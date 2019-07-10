@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/09 08:46:05 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/10 17:19:52 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ int			ft_check(char **stack)
 
 	i = 0;
 	while (stack[i])
+	{
 		if (ft_range(stack[i]) == 0 || ft_parse_int(stack[i]) == 0)
 			return (1);
+		i++;
+	}
 	return (0);
 }
 
@@ -42,27 +45,33 @@ int			ft_range(char *value)
 
 int			ft_dup(stack_a *head)
 {
-	stack_a *current;
+	stack_a *c;
 	stack_a	*ptr;
-	int		i;
+	int		i;	
 	int		size;
 	int		val;
 
-	i = 1;
+	i = 0;
 	ptr = head;
 	val = ptr->v;
 	size = ft_list_size(ptr);
 	while (i < size)
 	{
-		current = head;
-		while (current->next != NULL)
+		c = head;
+		while (c->next != NULL)
 		{
-			if (current->next->v == val)
+			if ((c->v == val) && !(c->p == i))
+			{
 				return (1);
-			current = current->next;
+			}
+			c = c->next;
 		}
+		ptr = ptr->next;
 		val = ptr->next->v;
+		i++;
 	}
+	free(ptr);
+	free(c);
 	return (0);
 }
 
