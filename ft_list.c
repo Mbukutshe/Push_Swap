@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/11 09:37:18 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/11 09:57:39 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			ft_list_size(struct node *head)
 {
 	struct node	*ptr;
-	int				len;
+	int			len;
 
 	len = 0;
 	ptr = head;
@@ -47,7 +47,7 @@ void		ft_populate(stack_a *head, char **stack)
 	}
 	while (ptr->next != NULL)
 		ptr = ptr->next;
-	if((ptr->next = malloc(sizeof(stack_a))) == NULL)
+	if ((ptr->next = malloc(sizeof(stack_a))) == NULL)
 		return ;
 	while (stack[i])
 	{
@@ -57,9 +57,14 @@ void		ft_populate(stack_a *head, char **stack)
 		ptr = ptr->next;
 		i++;
 	}
-	ptr->next->v = 0;
-	ptr->next->p = i;
-	ptr->next->next = malloc(sizeof(stack_a));
-	ptr = ptr->next;
-	ptr->next = NULL;
+	ft_null_terminate(&ptr, i);
+}
+
+void		ft_null_terminate(stack_a **head, int i)
+{
+	(*head)->next->v = 0;
+	(*head)->next->p = i;
+	(*head)->next->next = malloc(sizeof(stack_a));
+	*head = (*head)->next;
+	(*head)->next = NULL;
 }
