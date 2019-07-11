@@ -6,14 +6,14 @@
 #    By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/02 14:38:46 by kmbukuts          #+#    #+#              #
-#    Updated: 2019/07/09 12:53:23 by kmbukuts         ###   ########.fr        #
+#    Updated: 2019/07/11 10:46:30 by kmbukuts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = checker
 
 SRC = checker.c ft_swap.c ft_push.c ft_rotate.c \
-	  ft_reverse.c ft_list.c ft_errors.c
+	  ft_reverse.c ft_list.c ft_errors.c ft_handle_errors.c
 
 OBJ = $(SRC:.c=.o)
 
