@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/11 09:57:24 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/11 10:04:42 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,19 @@
 # include "./get_next_line/get_next_line.h"
 # include "./get_next_line/libft/libft.h"
 
-typedef struct node
+typedef struct	node
 {
 	int			v;
 	int			p;
 	struct node	*next;
-	
-}stack_a, stack_b;
+}				stack_a;
+
+typedef struct	node
+{
+	int			v;
+	int			p;
+	struct node	*next;
+}				stack_b;
 
 int			ft_list_size(struct node *head);
 void		ft_swap_a(stack_a *a);
