@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/10 17:20:00 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/11 09:37:18 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ void		ft_populate(stack_a *head, char **stack)
 	if (ptr != NULL)
 	{
 		ptr->v = ft_atoi(stack[i]);
+		ptr->p = i;
 		ptr->next = NULL;
+		i++;
 	}
 	while (ptr->next != NULL)
 		ptr = ptr->next;
