@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/10 17:13:23 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/11 09:57:24 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void		ft_push_both(stack_a **a, stack_b **b);
 void		ft_swap_both(stack_a *a, stack_b *b);
 int			ft_exist(char *str);
 void		ft_populate(stack_a *head, char **stack);
+void		ft_null_terminate(stack_a **head, int i);
 int			ft_parse_int(char *value);
 int			ft_range(char *value);
 int			ft_dup(stack_a *head);
