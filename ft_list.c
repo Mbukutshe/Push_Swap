@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/11 10:09:14 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/13 16:39:56 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ void		ft_populate(stack_a *head, char **stack)
 		ptr = ptr->next;
 		i++;
 	}
-	ft_null_terminate(&ptr, i);
+	ft_null_terminate(&ptr);
 }
 
-void		ft_null_terminate(stack_a **head, int i)
+void		ft_null_terminate(stack_a **head)
 {
 	(*head)->next->v = 0;
-	(*head)->next->p = i;
-	(*head)->next->next = malloc(sizeof(stack_a));
+	(*head)->next->p = 9999;
+	(*head)->next->next = NULL;
 	*head = (*head)->next;
 	(*head)->next = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 09:09:22 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/10 11:23:02 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/13 16:39:17 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,21 @@ void		ft_shift_a(stack_a **a)
 	int		value;
 
 	ptr = *a;
-	value = ptr->v;
-	while (ptr->next != NULL)
-		ptr = ptr->next;
-	ptr->next = malloc(sizeof(stack_a));
-	ptr->next->v = value;
-	ptr->next->next = NULL;
-	ptr = (*a)->next;
-	*a = ptr;
+	if (ptr)
+	{
+		value = ptr->v;	
+		while (ptr->next->next == NULL)
+		{
+			ptr->v = ptr->next->v;
+			ptr = ptr->next;
+		}
+		ptr->v = value;
+	}
+/*	(*ptr)->next = malloc(sizeof(stack_a));
+	(*ptr)->next->v = value;
+	(*ptr)->next->next = NULL;
+	*ptr = (*a)->next;
+	*a = *ptr;*/
 	free(ptr);
 }
 
