@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/11 09:40:54 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/13 11:10:57 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,26 +74,26 @@ int			ft_dup(stack_a *head)
 int			ft_exist(char *str)
 {
 	if (ft_strequ(str, "sa"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "sb"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "ss"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "pa"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "pb"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "ra"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "rb"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "rr"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "rra"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "rrb"))
-		return (1);
+		return (0);
 	else if (ft_strequ(str, "rrr"))
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/11 10:53:01 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/11 11:03:06 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int			ft_range(char *value);
 int			ft_dup(stack_a *head);
 int			ft_check(char **stack);
 int			ft_handle(stack_a *head, char **stack);
+int			ft_handle_instr(char *instr);
 
 #endif
