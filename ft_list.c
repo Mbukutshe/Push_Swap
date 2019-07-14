@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/13 16:39:56 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/14 16:21:31 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int			ft_list_size(struct node *head)
 	return (len);
 }
 
-void		ft_populate(stack_a *head, char **stack)
+void		ft_populate(stack_a *head, char **stack, int *size)
 {
 	stack_a	*ptr;
 	int		i;
@@ -47,8 +47,7 @@ void		ft_populate(stack_a *head, char **stack)
 	}
 	while (ptr->next != NULL)
 		ptr = ptr->next;
-	if ((ptr->next = malloc(sizeof(stack_a))) == NULL)
-		return ;
+	ptr->next = malloc(sizeof(stack_a));
 	while (stack[i])
 	{
 		ptr->next->v = ft_atoi(stack[i]);
@@ -57,7 +56,8 @@ void		ft_populate(stack_a *head, char **stack)
 		ptr = ptr->next;
 		i++;
 	}
-	ft_null_terminate(&ptr);
+	ptr->next = NULL;
+	*size = i;
 }
 
 void		ft_null_terminate(stack_a **head)

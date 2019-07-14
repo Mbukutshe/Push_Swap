@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/13 11:27:47 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/14 15:48:20 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ int			ft_dup(stack_a *head)
 	ptr = head;
 	val = ptr->v;
 	size = ft_list_size(ptr);
-	while (i < size)
+	while (ptr->next != NULL)
 	{
-		c = head;
+		c = ptr;
 		while (c->next != NULL)
 		{
-			if ((c->v == val) && !(c->p == ptr->p))
+			if (c->next->v == val)
 				return (1);
 			c = c->next;
 		}
@@ -74,26 +74,26 @@ int			ft_dup(stack_a *head)
 int			ft_exist(char *str)
 {
 	if (ft_strequ(str, "sa"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "sb"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "ss"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "pa"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "pb"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "ra"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "rb"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "rr"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "rra"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "rrb"))
-		return (0);
+		return (1);
 	else if (ft_strequ(str, "rrr"))
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
