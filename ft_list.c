@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 13:13:11 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 16:17:25 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void		ft_remove_last(struct node **head, int s)
 	struct node *ptr;
 
 	ptr = *head;
-	while (--s > 1)
+	while (s-- > 1)
 		ptr = ptr->next;
-	free(ptr->next);
+	free(ptr);
 	ptr->next = NULL;
 	return ;
 }

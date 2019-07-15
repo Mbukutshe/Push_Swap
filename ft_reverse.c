@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 09:33:30 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 14:43:42 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 16:12:46 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		ft_reverse_a(stack_a **a, int s)
 	ptr = *a;
 	if (s > 1)
 	{
-		while (--s > 1)
+		while (s-- > 1)
 			ptr = ptr->next;
 		ft_add_first(&*a, ptr->v);
 		ft_remove_last(&ptr, s);
@@ -33,7 +33,7 @@ void		ft_reverse_b(stack_b **b, int s)
 	ptr = *b;
 	if (s > 1)
 	{
-		while (--s > 1)
+		while (s-- > 1)
 			ptr = ptr->next;
 		ft_add_first(&*b, ptr->v);
 		ft_remove_last(&ptr, s);

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 11:21:58 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 14:47:20 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 16:13:24 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void		ft_print(struct node **head, int size)
 	struct node *current;
 	
 	current = *head;
-	if (current && size > 0)
+	if (size > 0)
 	{
-		while (--size > 0)
+		while (size-- > 0)
 		{
 			ft_putstr(ft_itoa(current->v));
 			ft_putchar('\t');
