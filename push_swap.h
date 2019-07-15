@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 14:47:58 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 16:37:28 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,13 @@ void		ft_push_both(stack_a **a, stack_b **b, int *s);
 void		ft_swap_both(stack_a *a, stack_b *b);
 int			ft_exist(char *str);
 void		ft_populate(stack_a *head, char **stack, int *size);
-void		ft_null_terminate(stack_a **head);
 int			ft_parse_int(char *value);
 int			ft_range(char *value);
 int			ft_dup(stack_a *head);
 int			ft_check(char **stack);
 int			ft_handle(stack_a *head, char **stack, int *size);
 int			ft_handle_instr(char *instr);
-void		ft_follow(stack_a **a, stack_b **b, char *instr, int *s, int i);
+void		ft_follow(stack_a **a, stack_b **b, char *instr, int *s);
 void		ft_remove_first(struct node **head);
 char		*ft_instr(char *str);
 void		ft_remove_last(struct node **head, int s);

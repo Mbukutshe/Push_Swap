@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:21:47 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 15:50:32 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 16:37:47 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		main(int c, char **argv)
 						return (0);
 					}
 				}
-				ft_follow(&stack, &temp, instr, &size, i);
+				ft_follow(&stack, &temp, instr, &size);
 				system("clear");
 				ft_putendl("\nCheck Here!!\n");
 				ft_print(&temp, stack_b_size("a"));

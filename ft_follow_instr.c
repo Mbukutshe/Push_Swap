@@ -6,16 +6,14 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 11:21:58 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 16:13:24 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 16:37:20 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_follow(stack_a **a, stack_b **b, char *instr, int *s, int i)
+void		ft_follow(stack_a **a, stack_b **b, char *instr, int *s)
 {
-	if (i == 1)
-		instr = ft_instr(instr);
 	if (ft_strequ(instr, "sa"))
 		ft_swap_a(&*a);
 	else if (ft_strequ(instr, "sb"))

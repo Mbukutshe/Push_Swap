@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 16:17:25 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 16:32:54 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,13 +110,4 @@ void		ft_populate(stack_a *head, char **stack, int *size)
 	}
 	ptr->next = NULL;
 	*size = i;
-}
-
-void		ft_null_terminate(stack_a **head)
-{
-	(*head)->next->v = 0;
-	(*head)->next->p = 9999;
-	(*head)->next->next = NULL;
-	*head = (*head)->next;
-	(*head)->next = NULL;
 }
