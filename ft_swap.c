@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:11:38 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/14 16:21:43 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 14:39:15 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void		ft_swap_b(stack_b **b)
 		temp = (*ptr)->v;
 		(*ptr)->v = (*ptr)->next->v;
 		(*ptr)->next->v = temp;
-		free(*ptr);
 	}
 }
 

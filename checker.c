@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:21:47 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/14 16:21:22 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/15 13:39:00 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		main(int c, char **argv)
 			}
 			while (get_next_line(0, &instr) == 1)
 			{
-				if (i == 1)
+				if (i == 1 && ft_strlen(instr) > 2)
 				{
 					if (ft_handle_instr(ft_instr(instr)))
 					{
@@ -55,8 +55,13 @@ int		main(int c, char **argv)
 						return (0);
 					}
 				}
-				ft_follow_instr(&stack, &temp, instr, size);
+				ft_follow(&stack, &temp, instr, &size, i);
+				system("clear");
+				ft_putendl("\nCheck Here!!\n");
+				ft_print(&temp, stack_b_size("a"));
+				ft_putendl("\n\tSTACK_B\n");
 				ft_print(&stack, size);
+				ft_putendl("\n\tSTACK_A");
 				i++;
 			}
 		}
