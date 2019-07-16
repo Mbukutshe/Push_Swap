@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 16:40:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/14 15:48:20 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/16 09:24:06 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			ft_check(char **stack)
 
 int			ft_parse_int(char *value)
 {
-	if (ft_atoi(value))
+	if (ft_atoi(value) || ft_atoi(value) == 0)
 		return (1);
 	return (0);
 }
@@ -47,11 +47,9 @@ int			ft_dup(stack_a *head)
 {
 	stack_a *c;
 	stack_a	*ptr;
-	int		i;
 	int		size;
 	int		val;
 
-	i = 0;
 	ptr = head;
 	val = ptr->v;
 	size = ft_list_size(ptr);
@@ -66,7 +64,6 @@ int			ft_dup(stack_a *head)
 		}
 		ptr = ptr->next;
 		val = ptr->v;
-		i++;
 	}
 	return (0);
 }
