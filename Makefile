@@ -6,7 +6,7 @@
 #    By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/02 14:38:46 by kmbukuts          #+#    #+#              #
-#    Updated: 2019/07/16 16:22:04 by kmbukuts         ###   ########.fr        #
+#    Updated: 2019/07/16 16:52:59 by kmbukuts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,15 @@ SRC = checker.c ft_swap.c ft_push.c ft_rotate.c \
 
 PUSH = ft_push_swap.c
 
+SWAP_OBJ = $(PUSH:.c=.o)
+
 OBJ = $(SRC:.c=.o)
 
-SWAP_OBJ = $(PUSH:.c=.o)
+SRC_OBJ = ft_swap.c ft_push.c ft_rotate.c ft_reverse.c \
+		  ft_list.c ft_errors.c ft_handle_errors.c \
+		  ft_follow_instr.c
+
+OBJ_SRC = $(SRC_OBJ:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -35,7 +41,7 @@ $(CHECKER) :
 	
 $(PUSH_SWAP) : 
 		gcc $(FLAGS) -c $(PUSH)
-		clang -o $(PUSH_SWAP) $(SWAP_OBJ) -I get_next_line/libft -L get_next_line/libft/ -lft -L get_next_line/
+		clang -o $(PUSH_SWAP) $(OBJ_SRC) $(SWAP_OBJ) -I get_next_line/libft -L get_next_line/libft/ -lft -L get_next_line/
 
 all : $(CHECKER) $(PUSH_SWAP)
 
