@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:11:38 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 14:39:15 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/16 09:47:24 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void		ft_swap_a(stack_a **a)
 {
 	stack_a **ptr;
 	int		temp;
+	int		size;
 
-	if (a)
+	size = ft_list_size(*a);
+	if (size > 1)
 	{
 		ptr = a;
 		temp = (*ptr)->v;
@@ -31,7 +33,7 @@ void		ft_swap_b(stack_b **b)
 	stack_b **ptr;
 	int		temp;
 
-	if (b)
+	if (stack_b_size("") > 1)
 	{
 		ptr = b;
 		temp = (*ptr)->v;
