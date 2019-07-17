@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/15 16:56:11 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/17 09:21:12 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void		ft_remove_last(struct node **head, int s);
 void		ft_add_first(struct node **head, int value);
 int			stack_b_size(char *oper);
 void		stack_a_size(int *size, char *oper);
+int			ft_sorted(stack_a *head);
 
 #endif
