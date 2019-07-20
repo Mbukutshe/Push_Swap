@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:21:47 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/17 09:29:52 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/20 13:04:27 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		main(int c, char **argv)
 					}
 				}
 				else
-				{	
+				{
 					if (ft_handle_instr(instr))
 					{
 						ft_putendl_fd("Error", 2);
@@ -56,12 +56,6 @@ int		main(int c, char **argv)
 					}
 				}
 				ft_follow(&stack, &temp, instr, &size);
-			/*	system("clear");
-				ft_putendl("\nCheck Here!!\n");
-				ft_print(&temp, stack_b_size("a"));
-				ft_putendl("\n\tSTACK_B\n");
-				ft_print(&stack, size);
-				ft_putendl("\n\tSTACK_A\n");*/
 				i++;
 			}
 			if (ft_sorted(stack))
