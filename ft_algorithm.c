@@ -6,25 +6,30 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 13:09:14 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/20 14:48:12 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/21 14:27:40 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_generate_a(stack_a *a)
+void		ft_generate_a(stack_a *a, stack_b * b, int *size)
 {
 	while (ft_sorted(a) == 0)
 	{
 		if (ft_is_less(a))
 			ft_putendl("rra");
 		if (ft_is_less(a) && !ft_sorted(a))
+		{
 			ft_putendl("pb");
+			ft_push_b(&a, &b, size);
+		}
 		if (ft_is_bigger(a))
 			ft_putendl("ra");
 		else if (ft_first_state(a))
 			ft_putendl("sa");
 	}
+	ft_pu
+	ft_generate_b(a, b, size);
 }
 
 int			ft_is_less(struct node *head)
@@ -79,7 +84,7 @@ int			ft_is_bigger(struct node *head)
 	if (size > 1)
 	{
 		v = ptr->v;
-		v = ptr->next;
+		c = ptr->next;
 		while (c->next != NULL)
 		{
 			if (c->v > v)

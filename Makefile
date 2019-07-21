@@ -6,7 +6,7 @@
 #    By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/02 14:38:46 by kmbukuts          #+#    #+#              #
-#    Updated: 2019/07/17 09:21:45 by kmbukuts         ###   ########.fr        #
+#    Updated: 2019/07/21 14:17:08 by kmbukuts         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = checker.c ft_swap.c ft_push.c ft_rotate.c \
 	  ft_reverse.c ft_list.c ft_errors.c ft_handle_errors.c \
 	  get_next_line/get_next_line.c ft_follow_instr.c ft_sorted.c
 
-PUSH = ft_push_swap.c
+PUSH = ft_push_swap.c ft_algorithm.c ft_algorithm_b.c
 
 SWAP_OBJ = $(PUSH:.c=.o)
 
@@ -26,7 +26,7 @@ OBJ = $(SRC:.c=.o)
 
 SRC_OBJ = ft_swap.c ft_push.c ft_rotate.c ft_reverse.c \
 		  ft_list.c ft_errors.c ft_handle_errors.c \
-		  ft_follow_instr.c
+		  ft_follow_instr.c ft_sorted.c
 
 OBJ_SRC = $(SRC_OBJ:.c=.o)
 
