@@ -6,31 +6,44 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 13:22:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 14:27:37 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/21 16:14:26 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void			ft_generate_b(stack_a *a, stack_b *b, int *size)
+void			ft_generate_b(stack_a **a, stack_b **b, int *size)
 {
-	while (ft_sorted_desc(b) == 0)
+	int		s;
+
+	while (ft_sorted_desc(*b) == 0)
 	{
-		if (ft_is_less(b))
+		s = stack_b_size("");
+		if (ft_is_less(*b))
+		{
 			ft_putendl("rb");
-		if (ft_is_bigger(b) && !ft_sorted_desc(b))
+			ft_shift_b(b, s);
+		}
+		if (ft_is_bigger(*b) && !ft_sorted_desc(*b))
 		{
 			ft_putendl("pa");
-			ft_push_a(&a, &b, size);
+			ft_push_a(a, b, size);
 		}
-		if (ft_is_bigger(b))
-			ft_putendl("rra");
-		else if (ft_first_state(b) == 0)
+		if (ft_is_bigger(*b))
+		{
+			ft_putendl("rrb");
+			ft_reverse_b(b, s);
+		}
+		else if (ft_first_state(*b))
+		{
 			ft_putendl("sb");
+			ft_swap_b(b);
+		}
 	}
-	while (ft_list_size(b) > 1)
+	while (ft_list_size(*b) > 1)
 	{
+		s = stack_b_size("");
 		ft_putendl("pa");
-		ft_push_a(&a, &b, size);
+		ft_push_a(a, b, &s);
 	}
 }

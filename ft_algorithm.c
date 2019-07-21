@@ -6,29 +6,39 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 13:09:14 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 14:27:40 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/21 16:28:05 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_generate_a(stack_a *a, stack_b * b, int *size)
+void		ft_generate_a(stack_a **a, stack_b **b, int *size)
 {
-	while (ft_sorted(a) == 0)
+	while (ft_sorted(*a) == 0)
 	{
-		if (ft_is_less(a))
+		if (ft_is_less(*a))
+		{
 			ft_putendl("rra");
-		if (ft_is_less(a) && !ft_sorted(a))
+			ft_reverse_a(a, *size);
+		}
+		if (ft_is_less(*a) == 0)
 		{
 			ft_putendl("pb");
-			ft_push_b(&a, &b, size);
+			ft_push_b(&*a, &*b, size);
 		}
-		if (ft_is_bigger(a))
+		if (ft_is_bigger(*a))
+		{
 			ft_putendl("ra");
-		else if (ft_first_state(a))
+			ft_shift_a(a, *size);
+		}
+		else if (ft_first_state(*a))
+		{
 			ft_putendl("sa");
+			ft_swap_a(a);
+		}
+		ft_putendl("mfm");
+		ft_print(a, *size);
 	}
-	ft_pu
 	ft_generate_b(a, b, size);
 }
 

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 11:58:33 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 14:06:06 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/21 15:19:39 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		main(int c, char **argv)
                 free(temp);
                 return(0);
             }
-			ft_generate_a(stack, temp, &size);
+			ft_generate_a(&stack, &temp, &size);
 		}
 	}
 	free(stack);

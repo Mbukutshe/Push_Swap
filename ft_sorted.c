@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 09:05:35 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 14:15:11 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/21 15:59:28 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,28 @@ int			ft_sorted_desc(stack_b *head)
 	stack_b *c;
 	int		v;
 	int		size;
+	int		i;
 
 	ptr = head;
-	size = ft_list_size(head);
-	if (size > 1)
+	size = stack_b_size("");
+	if (head != NULL)
 	{
-		v = ptr->v;
-		while (ptr->next != NULL)
+		if (size > 0)
 		{
-			c = ptr->next;
-			while (c->next != NULL)
-			{
-				if (c->v > v)
-					return (0);
-				c = c->next;
-			}
-			ptr = ptr->next;
 			v = ptr->v;
+			while (size-- > 1)
+			{
+				c = ptr->next;
+				i = size;
+				while (i-- > 1)
+				{
+					if (c->v > v)
+						return (0);
+					c = c->next;
+				}
+				ptr = ptr->next;
+				v = ptr->v;
+			}
 		}
 	}
 	return (1);
