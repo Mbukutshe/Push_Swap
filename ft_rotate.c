@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 09:09:22 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/23 16:55:41 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/27 00:58:16 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void		ft_shift_b(stack_b **b, int s)
 	stack_b *ptr;
 
 	ptr = *b;
-	if (s > 1)
+	if (s > 2)
 	{
-		while (s-- > 1)
+		while (s-- > 2)
 		{
 			ft_swap_b(&ptr);
 			ptr = ptr->next;

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 14:31:56 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 14:04:02 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/27 00:59:02 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void		ft_push_b(stack_a **a, stack_b **b, int *s)
 	stack_b *pb;
 	int		size;
 
-	if (*s > 0)
+	if (*s > 1)
 	{
 		pa = a;
 		pb = malloc(sizeof(stack_b));

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:21:47 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/26 10:37:14 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/26 23:09:37 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int		main(int c, char **argv)
 {
-	static stack_a	*stack;
-	static stack_b	*temp;
+	stack_a	*stack;
+	stack_b	*temp;
 	char			**res;
 	static char		*instr;
 	static int		i;
-	int				size;
+	static int		size;
 
 	if ((stack = malloc(sizeof(stack_a))) == NULL)
 		return (0);
@@ -59,12 +59,13 @@ int		main(int c, char **argv)
 				ft_follow(&stack, &temp, instr, &size);
 				i++;
 			}
-			if (ft_sorted(&stack))
+			if (ft_sorted(&stack, size))
 				ft_putendl("OK");
 			else
 				ft_putendl("KO");
 		}
 	}
+	ft_print(&stack, size);
 	free(stack);
 	free(temp);
 	return (0);

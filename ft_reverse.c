@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 09:33:30 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/20 13:33:03 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/27 00:58:37 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		ft_reverse_b(stack_b **b, int s)
 	ptr = *b;
 	if (s > 1)
 	{
-		while (s-- > 1)
+		while (s-- > 2)
 			ptr = ptr->next;
 		ft_add_first(&*b, ptr->v);
 		ft_remove_last(&ptr, s);
