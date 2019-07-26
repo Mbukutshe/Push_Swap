@@ -6,42 +6,38 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 09:05:35 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 15:59:28 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/26 11:36:49 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			ft_sorted(stack_a *head)
+int			ft_sorted(stack_a **head)
 {
-	stack_a	*ptr;
-	stack_a *c;
+	stack_a	**ptr;
+	stack_a	*c;
 	int		size;
 	int		val;
 
 	size = 0;
 	ptr = head;
-	val = ptr->v;
-	size = ft_list_size(head);
+	val = (*ptr)->v;
+	size = ft_list_size(*head);
 	if (size > 0)
 	{
-		while (ptr->next != NULL)
+		while (size-- > 1)
 		{
-			c = ptr;
-			while (c->next != NULL)
+			c = *ptr;
+			while (c != NULL)
 			{
 				if (c->v < val)
-				{
 					return (0);
-				}
 				c = c->next;
 			}
-			ptr = ptr->next;
-			val = ptr->v;
+			*ptr = (*ptr)->next;
+			val = (*ptr)->v;
 		}
 	}
-	else
-		return (0);
 	return (1);
 }
 
@@ -64,9 +60,9 @@ int			ft_sorted_desc(stack_b *head)
 			{
 				c = ptr->next;
 				i = size;
-				while (i-- > 1)
+				while (c->next->next != NULL)
 				{
-					if (c->v > v)
+					if (c->next->v > v)
 						return (0);
 					c = c->next;
 				}

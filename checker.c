@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:21:47 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 14:21:23 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/26 10:37:14 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		main(int c, char **argv)
 				ft_follow(&stack, &temp, instr, &size);
 				i++;
 			}
-			if (ft_sorted(stack))
+			if (ft_sorted(&stack))
 				ft_putendl("OK");
 			else
 				ft_putendl("KO");

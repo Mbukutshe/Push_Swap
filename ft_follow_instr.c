@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 11:21:58 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/18 14:18:21 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/23 16:26:12 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		ft_follow(stack_a **a, stack_b **b, char *instr, int *s)
 {
 	if (ft_strequ(instr, "sa"))
-		ft_swap_a(&*a);
+		ft_swap_a(&*a, *s);
 	else if (ft_strequ(instr, "sb"))
 		ft_swap_b(&*b);
 	else if (ft_strequ(instr, "ss"))

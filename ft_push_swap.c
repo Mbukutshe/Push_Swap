@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 11:58:33 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 15:19:39 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/25 13:06:48 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main(int c, char **argv)
 {
 
-	static stack_a  *stack;
+	stack_a  *stack;
     static stack_b  *temp;
     char            **res;
     int             size;
@@ -35,7 +35,7 @@ int		main(int c, char **argv)
                 free(temp);
                 return(0);
             }
-			ft_generate_a(&stack, &temp, &size);
+			ft_generate_a(stack, temp, &size);
 		}
 	}
 	free(stack);

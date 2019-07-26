@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/21 16:05:44 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/26 11:48:47 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	node
 
 void		ft_print(struct node **head, int size);
 int			ft_list_size(struct node *head);
-void		ft_swap_a(stack_a **a);
+void		ft_swap_a(stack_a **a, int s);
 void		ft_swap_b(stack_b **b);
 void		ft_push_a(stack_a **a, stack_b **b, int *s);
 void		ft_push_b(stack_a **a, stack_b **b, int *s);
@@ -51,12 +51,12 @@ void		ft_remove_last(struct node **head, int s);
 void		ft_add_first(struct node **head, int value);
 int			stack_b_size(char *oper);
 void		stack_a_size(int *size, char *oper);
-int			ft_sorted(stack_a *head);
-void		ft_generate_a(stack_a **a, stack_b **b, int *size);
-void		ft_generate_b(stack_a **a, stack_b **b, int *size);
-int			ft_is_less(struct node *head);
-int			ft_first_state(struct node *head);
-int			ft_is_bigger(struct node *head);
+int			ft_sorted(stack_a **head);
+void		ft_generate_a(stack_a *a, stack_b *b, int *size);
+void		ft_generate_b(stack_a *a, stack_b *b, int *size);
+int			ft_is_less(struct node **head);
+int			ft_first_state(struct node **head, int size);
+int			ft_is_bigger(struct node **head, int s);
 int			ft_sorted_desc(stack_b *head);
 
 #endif

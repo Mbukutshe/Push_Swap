@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 09:09:22 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/20 12:47:45 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/23 16:55:41 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void		ft_shift_a(stack_a **a, int s)
 {
 	stack_a *ptr;
+	int		size;
 
 	ptr = *a;
+	size = s;
 	if (s > 1)
 	{
 		while (s-- > 1)
 		{
-			ft_swap_a(&ptr);
+			ft_swap_a(&ptr, size);
 			ptr = ptr->next;
 		}
 	}

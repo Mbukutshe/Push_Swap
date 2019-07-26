@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/18 14:16:22 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/26 11:59:00 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int			ft_list_size(struct node *head)
 	ptr = head;
 	if (ptr != NULL)
 	{
-		while (ptr != NULL)
+		while (head != NULL)
 		{
 			len++;
-			ptr = ptr->next;
+			head = head->next;
 		}
 	}
 	return (len);
