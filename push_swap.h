@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/26 22:47:25 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/27 01:39:08 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ int			ft_is_les(stack_b **head);
 int			ft_is_big(stack_b **head);
 int			ft_how_big(stack_b **head);
 int			ft_must_push(stack_a **head, int s);
+int			ft_pa_sa(stack_a **a, stack_b **b);
 #endif

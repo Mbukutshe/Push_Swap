@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 13:22:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/27 01:05:59 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/27 01:56:08 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ void			ft_generate_b(stack_a *a, stack_b *b, int *size)
 			ft_putendl("pa");
 			ft_push_a(&a, &b, size);
 		}
+		if (ft_pa_sa(&a, &b))
+		{
+			if (ft_first_state(&a, *size))
+        	{
+            	ft_swap_a(&a, *size);
+            	ft_putendl("sa");
+        	}
+		}
 		if (ft_is_big(&b) && (stack_b_size("") > 2))
 		{
 			ft_putendl("rrb");
@@ -47,10 +55,30 @@ void			ft_generate_b(stack_a *a, stack_b *b, int *size)
 	{
 		s = stack_b_size("") - 1;
 		ft_putendl("pa");
-		ft_push_a(&a, &b, &s);;
+		ft_push_a(&a, &b, &s);
+		if (ft_first_state(&a, *size))
+        {
+            ft_swap_a(&a, *size);
+            ft_putendl("sa");
+        }
 		c--;
-		ft_generate_a(a, b, size);
 	}
+}
+
+int				ft_pa_sa(stack_a **a, stack_b **b)
+{
+	stack_a *ptr_a;
+	stack_b *ptr_b;
+
+	ptr_a = *a;
+	ptr_b = *b;
+
+	if (stack_b_size("") > 1)
+	{
+		if (ptr_a->v < ptr_b->v)
+			return (1);
+	}
+	return (0);
 }
 
 int				ft_is_les(stack_b **head)
