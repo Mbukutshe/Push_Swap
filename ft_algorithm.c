@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 13:09:14 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/27 02:52:05 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/27 07:29:44 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ void		ft_generate_a(stack_a *a, stack_b *b, int *size)
 			ft_putendl("pb");
 			ft_push_b(&a, &b, size);
 		}
-		if (ft_is_bigger(&a, *size) || ft_last_less(&a))
+		if (ft_is_bigger(&a, *size))
+		{
+			ft_putendl("ra");
+			ft_shift_a(&a, *size);
+		}
+		else if (ft_last_less(&a))
 		{
 			ft_putendl("ra");
 			ft_shift_a(&a, *size);
@@ -70,15 +75,17 @@ int			ft_last_less(stack_a **head)
 	stack_a *ptr;
 	stack_a *c;
 	int		size;
+	int		v;
 
 	ptr = *head;
 	size = ft_list_size(*head);
 	if (size > 1)
 	{
-		while (size-- > 1)
+		while (ptr->next != NULL)
 			ptr = ptr->next;
+		v = ptr->v;
 		c = *head;
-		if (c->v > ptr->v)
+		if (c->v > v)
 			return (1);
 	}
 	return (0);
