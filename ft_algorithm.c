@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 13:09:14 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/27 01:51:50 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/27 02:52:05 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void		ft_generate_a(stack_a *a, stack_b *b, int *size)
 {
-	while (!ft_sorted(&a, *size))
+	while (ft_sorted(&a, *size) == 0)
 	{
-		if (ft_is_less(&a) && ft_sorted(&a, *size) == 0)
+		if (ft_is_less(&a))
 		{
 			ft_putendl("rra");
 			ft_reverse_a(&a, *size);
@@ -26,12 +26,12 @@ void		ft_generate_a(stack_a *a, stack_b *b, int *size)
 			ft_putendl("pb");
 			ft_push_b(&a, &b, size);
 		}
-		if (ft_is_bigger(&a, *size))
+		if (ft_is_bigger(&a, *size) || ft_last_less(&a))
 		{
 			ft_putendl("ra");
 			ft_shift_a(&a, *size);
 		}
-		if (ft_first_state(&a, *size))
+		if (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
 		{
 			ft_swap_a(&a, *size);
 			ft_putendl("sa");
@@ -57,12 +57,31 @@ int			ft_is_less(struct node **head)
 		c = *head;
 		while (c->next != NULL)
 		{
-			if (c->next->v < v)
+			if (c->v < v)
 				return (0);
 			c = c->next;
 		}
 	}
 	return (1);
+}
+
+int			ft_last_less(stack_a **head)
+{
+	stack_a *ptr;
+	stack_a *c;
+	int		size;
+
+	ptr = *head;
+	size = ft_list_size(*head);
+	if (size > 1)
+	{
+		while (size-- > 1)
+			ptr = ptr->next;
+		c = *head;
+		if (c->v > ptr->v)
+			return (1);
+	}
+	return (0);
 }
 
 int			ft_must_push(stack_a **head, int s)
