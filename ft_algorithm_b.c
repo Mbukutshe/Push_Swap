@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 13:22:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/27 07:32:41 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/29 11:18:14 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ void			ft_generate_b(stack_a *a, stack_b *b, int *size)
             ft_swap_a(&a, *size);
             ft_putendl("sa");
         }
+		if (!ft_sorted(&a, *size))
+			ft_generate_a(a, b, size);
 		c--;
 	}
 }
@@ -72,7 +74,6 @@ int				ft_pa_sa(stack_a **a, stack_b **b)
 
 	ptr_a = *a;
 	ptr_b = *b;
-
 	if (stack_b_size("") > 1)
 	{
 		if (ptr_a->v < ptr_b->v)
