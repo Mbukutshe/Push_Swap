@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 14:31:56 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/27 00:59:02 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/29 09:08:56 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void		ft_push_a(stack_a **a, stack_b **b, int *s)
 		size = stack_b_size("minus");
 		stack_a_size(s, "add");
 	}
-	return ;
 }
 
 void		ft_push_b(stack_a **a, stack_b **b, int *s)
@@ -51,12 +50,10 @@ void		ft_push_b(stack_a **a, stack_b **b, int *s)
 		stack_a_size(s, "minus");
 		size = stack_b_size("add");
 	}
-	return ;
 }
 
 void		ft_push_both(stack_a **a, stack_b **b, int *s)
 {
 	ft_push_a(a, b, s);
 	ft_push_b(a, b, s);
-	return ;
 }

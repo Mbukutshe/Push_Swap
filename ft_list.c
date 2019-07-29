@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/27 03:52:20 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/29 09:54:40 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,19 @@ void		ft_add_first(struct node **head, int value)
 	item->next = *head;
 	*head = item;
 	return ;
+}
+
+void		ft_add_last(struct node **head, int	value)
+{
+	struct node *item;
+
+	item = *head;
+	while (item->next != NULL)
+		item = item->next;
+	if ((item->next = malloc(sizeof(struct node))) == NULL)
+		return ;
+	item->next->v = value;
+	item->next->next = NULL;
 }
 
 void		ft_remove_first(struct node **head)
