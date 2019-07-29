@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 13:22:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/29 11:18:14 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/29 14:12:48 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void			ft_generate_b(stack_a *a, stack_b *b, int *size)
 
 	while (ft_sorted_desc(&b) == 0)
 	{
-		s = stack_b_size("")  - 1;
-		if (ft_is_les(&b) && stack_b_size("") > 2)
+		s = stack_b_size("");
+		if (ft_is_les(&b) && stack_b_size("") > 1)
 		{
 			ft_putendl("rb");
 			ft_shift_b(&b, s);
@@ -38,7 +38,7 @@ void			ft_generate_b(stack_a *a, stack_b *b, int *size)
             	ft_putendl("sa");
         	}
 		}
-		if (ft_is_big(&b) && (stack_b_size("") > 2))
+		if (ft_is_big(&b) && (stack_b_size("") > 1))
 		{
 			ft_putendl("rrb");
 			ft_reverse_b(&b, s);
@@ -53,7 +53,7 @@ void			ft_generate_b(stack_a *a, stack_b *b, int *size)
 	c = stack_b_size("");
 	while (c > 1)
 	{
-		s = stack_b_size("") - 1;
+		s = stack_b_size("");
 		ft_putendl("pa");
 		ft_push_a(&a, &b, &s);
 		if (ft_first_state(&a, *size))
@@ -90,14 +90,14 @@ int				ft_is_les(stack_b **head)
 	int		size;
 
 	ptr = *head;
-	s = stack_b_size("") - 1;
-	if (s > 2)
+	s = stack_b_size("");
+	if (s > 1)
 	{
 		size = s;
-		while (s-- > 2)
+		while (s-- > 1)
 			ptr = ptr->next;
 		c = *head;
-		while (size-- > 2)
+		while (size-- > 1)
 		{
 			if (c->v < ptr->v)
 				return (0);
@@ -113,8 +113,8 @@ int			ft_how_big(stack_b **head)
 	int		s;
 
 	ptr = *head;
-	s = stack_b_size("") - 1;
-	if (s > 2)
+	s = stack_b_size("");
+	if (s > 1)
 	{
 		if (ptr->v < ptr->next->v)
 			return (1);
@@ -129,11 +129,11 @@ int			ft_is_big(stack_b **head)
 	int		s;
 
 	ptr = *head;
-	s = stack_b_size("") - 1;
-	if (s > 2)
+	s = stack_b_size("");
+	if (s > 1)
 	{
 		c = ptr->next;
-		while (s-- > 2)
+		while (s-- > 1)
 		{
 			if (c->v < ptr->v)
 				return (0);

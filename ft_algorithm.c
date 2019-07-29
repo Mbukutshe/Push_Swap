@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 13:09:14 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/29 09:53:33 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/29 16:08:59 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,21 @@ void		ft_generate_a(stack_a *a, stack_b *b, int *size)
 			ft_putendl("pb");
 			ft_push_b(&a, &b, size);
 		}
-		if (ft_is_bigger(&a, *size) || ft_last_less(&a))
+		if (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
+        {
+            ft_swap_a(&a, *size);
+            ft_putendl("sa");
+        }
+		else if (ft_is_bigger(&a, *size) || ft_last_less(&a))
 		{
 			ft_putendl("ra");
 			ft_shift_a(&a, *size);
 		}
-		if (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
+/*		if (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
 		{
 			ft_swap_a(&a, *size);
 			ft_putendl("sa");
-		}
+		}*/
 	}
 	ft_generate_b(a, b, size);
 }
@@ -123,7 +128,7 @@ int			ft_is_bigger(struct node **head, int s)
 	if (ptr)
 	{
 		v = ptr->v;
-		c = ptr->next;
+		c = ptr;
 		while (s-- > 1)
 		{
 			if (c->v > v)
