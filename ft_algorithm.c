@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 13:09:14 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/29 16:08:59 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/30 13:41:23 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,37 @@ void		ft_generate_a(stack_a *a, stack_b *b, int *size)
 	{
 		if (ft_is_less(&a))
 		{
+			if (ft_sorted(&a, *size))
+                break;
 			ft_putendl("rra");
 			ft_reverse_a(&a, *size);
 		}
-		if (ft_is_less(&a) || ft_must_push(&a, *size))
+		if ((ft_is_less(&a) || ft_must_push(&a, *size)) && *size > 3)
 		{
+			if (ft_sorted(&a, *size))
+                break;
 			ft_putendl("pb");
 			ft_push_b(&a, &b, size);
 		}
-		if (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
+	/*	while (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
         {
             ft_swap_a(&a, *size);
             ft_putendl("sa");
-        }
-		else if (ft_is_bigger(&a, *size) || ft_last_less(&a))
+        }*/
+		if (ft_is_bigger(&a, *size))
 		{
+			if (ft_sorted(&a, *size))
+                break;
 			ft_putendl("ra");
 			ft_shift_a(&a, *size);
 		}
-/*		if (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
+		if (ft_first_state(&a, *size) && !ft_must_push(&a, *size))
 		{
+			if (ft_sorted(&a, *size))
+                break;
 			ft_swap_a(&a, *size);
 			ft_putendl("sa");
-		}*/
+		}
 	}
 	ft_generate_b(a, b, size);
 }
@@ -49,18 +57,20 @@ int			ft_is_less(struct node **head)
 {
 	struct node *ptr;
 	struct node *c;
-	int			size;
+	int			s;
 	int			v;
+	int			i;
 
 	ptr = *head;
-	size = ft_list_size(*head);
-	if (size > 1)
+	s = ft_list_size(*head);
+	i = s;
+	if (s > 1)
 	{
-		while (ptr->next != NULL)
+		while (s-- > 1)
 			ptr = ptr->next;
 		v = ptr->v;
-		c = *head;
-		while (c->next != NULL)
+		c = (*head)->next;
+		while (--i > 1)
 		{
 			if (c->v < v)
 				return (0);
@@ -129,7 +139,7 @@ int			ft_is_bigger(struct node **head, int s)
 	{
 		v = ptr->v;
 		c = ptr;
-		while (s-- > 1)
+		while (s-- > 0)
 		{
 			if (c->v > v)
 				return (0);

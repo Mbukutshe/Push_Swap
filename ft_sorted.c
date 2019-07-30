@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 09:05:35 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/29 15:55:47 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/07/30 10:19:48 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int			ft_sorted(stack_a **head, int s)
 	val = ptr->v;
 	if (ptr)
 	{
-		while (s-- > 0)
+		while (s-- > 1)
 		{
 			c = ptr;
 			size = s;
