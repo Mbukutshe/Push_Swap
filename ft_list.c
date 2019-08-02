@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 19:30:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/30 11:02:14 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/08/02 13:42:37 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,5 @@ void		ft_populate(stack_a *head, char **stack, int *size)
 		ptr = ptr->next;
 		i++;
 	}
-	ptr->next = NULL;
 	*size = i;
 }

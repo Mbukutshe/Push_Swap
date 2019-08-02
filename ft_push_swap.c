@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 11:58:33 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/26 23:15:17 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/08/02 13:40:48 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int		main(int c, char **argv)
 {
 
-	stack_a  *stack;
-    stack_b  *temp;
+	static stack_a  *stack;
+    static stack_b  *temp;
     char            **res;
     static int      size;
 

@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 14:23:54 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/30 09:05:08 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/08/02 13:48:06 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void			stack_a_size(int *size, char *oper);
 int				ft_sorted(stack_a **head, int s);
 void			ft_generate_a(stack_a *a, stack_b *b, int *size);
 void			ft_generate_b(stack_a *a, stack_b *b, int *size);
-int				ft_is_less(struct node **head);
+int				ft_is_less(struct node **head, int s);
 int				ft_first_state(struct node **head, int size);
 int				ft_is_bigger(struct node **head, int s);
 int				ft_sorted_desc(stack_b **head);
