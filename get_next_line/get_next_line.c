@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 07:47:26 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/29 15:10:18 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/09/16 13:23:39 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int			get_next_line(const int fd, char **line)
 	char			*ln;
 	char			*ptr;
 	int				i;
-	
+
 	if (!stack && (stack = (char *)malloc(sizeof(*stack))) == NULL)
 		return (-1);
 	if (!line || fd < 0 || BUFF_SIZE < 0)
