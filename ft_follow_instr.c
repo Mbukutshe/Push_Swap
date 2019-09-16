@@ -6,24 +6,24 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 11:21:58 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/23 16:26:12 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/09/13 17:38:12 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_follow(stack_a **a, stack_b **b, char *instr, int *s)
+void		ft_follow(t_stack **a, t_stack **b, char *instr, int *s)
 {
 	if (ft_strequ(instr, "sa"))
-		ft_swap_a(&*a, *s);
+		ft_swap_a(a, *s);
 	else if (ft_strequ(instr, "sb"))
-		ft_swap_b(&*b);
+		ft_swap_b(b);
 	else if (ft_strequ(instr, "ss"))
-		ft_swap_both(*a, *b);
+		ft_swap_both(a, b, *s);
 	else if (ft_strequ(instr, "pa"))
-		ft_push_a(&*a, &*b, s);
+		ft_push_a(a, b, s);
 	else if (ft_strequ(instr, "pb"))
-		ft_push_b(&*a, &*b, s);
+		ft_push_b(a, b, s);
 	else if (ft_strequ(instr, "ra"))
 		ft_shift_a(a, *s);
 	else if (ft_strequ(instr, "rb"))
@@ -39,18 +39,19 @@ void		ft_follow(stack_a **a, stack_b **b, char *instr, int *s)
 	return ;
 }
 
-void		ft_print(struct node **head, int size)
+void		ft_print(t_stack *head, int size)
 {
-	struct node *current;
-	
-	current = *head;
+	t_stack *current;
+
+	current = head;
 	if (size > 0)
 	{
-		while (size-- > 0)
+		while (current != NULL)
 		{
 			ft_putstr(ft_itoa(current->v));
 			ft_putchar('\t');
 			current = current->next;
 		}
+		ft_putendl("\n");
 	}
 }

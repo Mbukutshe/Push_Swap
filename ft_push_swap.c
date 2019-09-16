@@ -6,39 +6,35 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 11:58:33 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/08/02 13:40:48 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/09/16 15:14:24 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int c, char **argv)
+int		main(int c, char **av)
 {
+	t_stack			*a;
+	t_stack			*b;
+	char			**res;
+	static int		size;
 
-	static stack_a  *stack;
-    static stack_b  *temp;
-    char            **res;
-    static int      size;
-
-    if ((stack = malloc(sizeof(stack_a))) == NULL)
-        return (0);
-    if ((temp = malloc(sizeof(stack_b))) == NULL)
-        return (0);
-    if (c > 1 && ft_strequ(argv[1], "") == 0)
-    {
-        if (stack != NULL)
-        {
-            res = ft_strsplit(argv[1], ' ');
-            if (ft_handle(stack, res, &size))
-            {
-                free(stack);
-                free(temp);
-                return(0);
-            }
-			ft_generate_a(stack, temp, &size);
+	if ((a = (t_stack *)malloc(sizeof(t_stack))) == NULL)
+		return (0);
+	if ((b = (t_stack *)malloc(sizeof(t_stack))) == NULL)
+		return (0);
+	b = NULL;
+	res = NULL;
+	if (c > 1 && ft_is_right(av))
+	{
+		res = ft_core_process(c, res, av);
+		if (ft_handle(a, res, &size))
+		{
+			ft_free(&a, &b);
+			return (0);
 		}
+		ft_generate_a(&a, &b, &size);
 	}
-	free(stack);
-	free(temp);
+	ft_free(&a, &b);
 	return (0);
 }

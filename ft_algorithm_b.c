@@ -6,74 +6,36 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 13:22:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/08/02 09:23:18 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/09/13 15:49:55 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void			ft_generate_b(stack_a *a, stack_b *b, int *size)
+void		ft_generate_b(t_stack **a, t_stack **b, int *size)
 {
-	int		s;
-	int		c;
-
-	while (ft_sorted_desc(&b) == 0)
+	while (ft_sorted_desc(*b))
 	{
-		s = stack_b_size("");
-		if (ft_is_les(&b) && stack_b_size("") > 1)
-		{
-			ft_putendl("rb");
-			ft_shift_b(&b, s);
-		}
-		if (ft_is_big(&b))
-		{
-			ft_putendl("pa");
-			ft_push_a(&a, &b, size);
-		}
-		if (ft_pa_sa(&a, &b))
-		{
-			if (ft_first_state(&a, *size))
-        	{
-            	ft_swap_a(&a, *size);
-            	ft_putendl("sa");
-        	}
-		}
-		if (ft_is_big(&b) && (stack_b_size("") > 1))
-		{
-			ft_putendl("rrb");
-			ft_reverse_b(&b, s);
-		}
-		if (ft_how_big(&b))
-		{
-			ft_putendl("sb");
-			ft_swap_b(&b);
-		}
+		ft_execute_both(a, b, size);
+		ft_rrb(b);
+		ft_rb(b);
+		ft_pa(a, b, size);
+		ft_pasa(a, b, size);
+		ft_sb(b);
+		ft_put_back(a, b, size);
 		ft_generate_a(a, b, size);
 	}
-	c = stack_b_size("");
-	while (c > 1)
-	{
-		s = stack_b_size("");
-		ft_putendl("pa");
-		ft_push_a(&a, &b, &s);
-		if (ft_first_state(&a, *size))
-        {
-            ft_swap_a(&a, *size);
-            ft_putendl("sa");
-        }
-		if (!ft_sorted(&a, *size))
-			ft_generate_a(a, b, size);
-		c--;
-	}
+	ft_put_back(a, b, size);
+	return ;
 }
 
-int				ft_pa_sa(stack_a **a, stack_b **b)
+int			ft_pa_sa(t_stack *a, t_stack *b)
 {
-	stack_a *ptr_a;
-	stack_b *ptr_b;
+	t_stack		*ptr_a;
+	t_stack		*ptr_b;
 
-	ptr_a = *a;
-	ptr_b = *b;
+	ptr_a = a;
+	ptr_b = b;
 	if (stack_b_size("") > 1)
 	{
 		if (ptr_a->v < ptr_b->v)
@@ -82,24 +44,24 @@ int				ft_pa_sa(stack_a **a, stack_b **b)
 	return (0);
 }
 
-int				ft_is_les(stack_b **head)
+int			ft_is_les(t_stack *head)
 {
-	stack_b *ptr;
-	stack_b *c;
-	int		s;
-	int		size;
+	t_stack		*ptr;
+	t_stack		*c;
+	int			s;
+	int			size;
 
-	ptr = *head;
+	ptr = head;
 	s = stack_b_size("");
 	if (s > 1)
 	{
 		size = s;
-		while (s-- > 1)
+		while (ptr->next != NULL)
 			ptr = ptr->next;
-		c = *head;
-		while (size-- > 1)
+		c = head;
+		while (c->next != NULL)
 		{
-			if (c->v < ptr->v)
+			if (c->next->v < ptr->v)
 				return (0);
 			c = c->next;
 		}
@@ -107,14 +69,14 @@ int				ft_is_les(stack_b **head)
 	return (1);
 }
 
-int			ft_how_big(stack_b **head)
+int			ft_how_big(t_stack *head)
 {
-	stack_b *ptr;
-	int		s;
+	t_stack		*ptr;
+	int			s;
 
-	ptr = *head;
+	ptr = head;
 	s = stack_b_size("");
-	if (s > 1)
+	if (s > 2)
 	{
 		if (ptr->v < ptr->next->v)
 			return (1);
@@ -122,23 +84,23 @@ int			ft_how_big(stack_b **head)
 	return (0);
 }
 
-int			ft_is_big(stack_b **head)
+int			ft_is_big(t_stack *head)
 {
-	stack_b *ptr;
-	stack_b *c;
-	int		s;
+	t_stack		*ptr;
+	t_stack		*c;
+	int			s;
 
-	ptr = *head;
+	ptr = head;
 	s = stack_b_size("");
 	if (s > 1)
 	{
-		c = ptr->next;
-		while (s-- > 1)
+		c = head->next;
+		while (c != NULL)
 		{
 			if (c->v < ptr->v)
-				return (0);
+				return (1);
 			c = c->next;
 		}
 	}
-	return (1);
+	return (0);
 }

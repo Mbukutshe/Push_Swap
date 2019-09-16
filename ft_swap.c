@@ -6,44 +6,45 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:11:38 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/29 11:43:40 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/09/13 15:26:23 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_swap_a(stack_a **a, int s)
+void		ft_swap_a(t_stack **a, int s)
 {
-	stack_a **ptr;
-	int		temp;
-	int		size;
+	t_stack		*ptr;
+	int			temp;
 
-	ptr = a;
-	size = s;
-	if (size > 1)
+	ptr = *a;
+	if (s > 1)
 	{
-		temp = (*ptr)->v;
-		(*ptr)->v = (*ptr)->next->v;
-		(*ptr)->next->v = temp;
+		temp = ptr->v;
+		ptr->v = ptr->next->v;
+		ptr->next->v = temp;
 	}
+	return ;
 }
 
-void		ft_swap_b(stack_b **b)
+void		ft_swap_b(t_stack **b)
 {
-	stack_b **ptr;
-	int		temp;
+	t_stack		*ptr;
+	int			temp;
 
 	if (stack_b_size("") > 1)
 	{
-		ptr = b;
-		temp = (*ptr)->v;
-		(*ptr)->v = (*ptr)->next->v;
-		(*ptr)->next->v = temp;
+		ptr = *b;
+		temp = ptr->v;
+		ptr->v = ptr->next->v;
+		ptr->next->v = temp;
 	}
+	return ;
 }
 
-void		ft_swap_both(stack_a *a, stack_b *b)
+void		ft_swap_both(t_stack **a, t_stack **b, int s)
 {
-	ft_swap_a(&a, 2);
-	ft_swap_b(&b);
+	ft_swap_a(a, s);
+	ft_swap_b(b);
+	return ;
 }

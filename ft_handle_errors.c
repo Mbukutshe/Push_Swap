@@ -6,13 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 10:10:37 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/07/20 14:56:13 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/09/13 15:39:22 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			ft_handle(stack_a *head, char **stack, int *size)
+int			ft_handle(t_stack *head, char **stack, int *size)
 {
 	if (ft_check(stack))
 	{

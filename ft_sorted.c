@@ -6,70 +6,93 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 09:05:35 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/08/02 15:24:03 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/09/16 13:28:00 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			ft_sorted(stack_a **head, int s)
+int			ft_sorted(t_stack **head, int s)
 {
-	stack_a	*ptr;
-	stack_a	*c;
-	int		size;
-	int		count;
-	int		val;
+	t_stack		*ptr;
+	t_stack		*c;
 
-	count = s;
 	ptr = *head;
-	val = ptr->v;
-	if (ptr)
+	if (s > 1)
 	{
-		while (s-- > 1)
+		while (ptr->next != NULL)
 		{
 			c = ptr;
-			size = s;
-			while (size-- > 0)
+			while (c != NULL)
 			{
-				if (c->next->v < val)
-				{
+				if (c->v < ptr->v)
 					return (0);
-				}
 				c = c->next;
 			}
 			ptr = ptr->next;
-			val = ptr->v;
 		}
 	}
 	return (1);
 }
 
-int			ft_sorted_desc(stack_b **head)
+int			ft_sorted_desc(t_stack *head)
 {
-	stack_b *ptr;
-	stack_b *c;
-	int		v;
-	int		size;
-	int		i;
+	t_stack		*ptr;
+	t_stack		*c;
+	int			size;
 
-	ptr = *head;
+	ptr = head;
 	size = stack_b_size("");
 	if (size > 1)
 	{
-		v = ptr->v;
-		while (size-- > 1)
+		while (ptr->next != NULL)
 		{
-			c = ptr->next;
-			i = size;
-			while (i-- > 1)
+			c = ptr;
+			while (c->next != NULL)
 			{
-				if (c->next->v > v)
-					return (0);
+				if (c->v > ptr->v)
+					return (1);
 				c = c->next;
 			}
 			ptr = ptr->next;
-			v = ptr->v;
 		}
 	}
-	return (1);
+	return (0);
+}
+
+char		*ft_set(char **av, int c)
+{
+	char	*str;
+	int		i;
+
+	i = 1;
+	str = ft_strdup(av[i]);
+	while (++i < c)
+	{
+		str = ft_strjoin(str, " ");
+		str = ft_strjoin(str, av[i]);
+	}
+	return (str);
+}
+
+char		**ft_core_process(int c, char **res, char **av)
+{
+	if (c > 2)
+	{
+		res = ft_strsplit(ft_set(av, c), ' ');
+	}
+	else
+	{
+		res = ft_strsplit(av[1], ' ');
+	}
+	return (res);
+}
+
+void		ft_exec(t_stack **a, t_stack **b, char **instr, int s)
+{
+	while (get_next_line(0, instr) == 1)
+	{
+		ft_get_process(a, b, s, *instr);
+	}
+	ft_is_ok(a, s);
 }
