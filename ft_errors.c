@@ -47,12 +47,12 @@ int			ft_dup(t_stack *head)
 {
 	t_stack	*c;
 	t_stack	*ptr;
-	int		size;
+	//int		size; delete
 	int		val;
 
 	ptr = head;
 	val = ptr->v;
-	size = ft_list_size(ptr);
+	//size = ft_list_size(ptr);
 	while (ptr->next != NULL)
 	{
 		c = ptr;

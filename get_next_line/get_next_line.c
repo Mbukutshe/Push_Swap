@@ -36,7 +36,7 @@ static int	ft_put_cont(const int fd, char **cont, char **line)
 {
 	int	i;
 
-	while (*line == '\0')
+	while (*line == NULL)
 	{
 		i = ft_get_line(fd, cont);
 		if (i == 0)

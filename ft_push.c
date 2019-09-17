@@ -16,7 +16,7 @@ void		ft_push_a(t_stack **a, t_stack **b, int *s)
 {
 	t_stack		*pa;
 	t_stack		*pb;
-	int			size;
+	//int			size;
 
 	if (stack_b_size("") > 0)
 	{
@@ -26,7 +26,8 @@ void		ft_push_a(t_stack **a, t_stack **b, int *s)
 		pa->next = *a;
 		*a = pa;
 		ft_remove_first(&*b);
-		size = stack_b_size("minus");
+		//size = 
+		stack_b_size("minus");
 		stack_a_size(s, "add");
 	}
 	return ;
@@ -36,7 +37,7 @@ void		ft_push_b(t_stack **a, t_stack **b, int *s)
 {
 	t_stack		*pa;
 	t_stack		*pb;
-	int			size;
+	//int			size;
 
 	if (*s > 1)
 	{
@@ -47,7 +48,8 @@ void		ft_push_b(t_stack **a, t_stack **b, int *s)
 		*b = pb;
 		ft_remove_first(&*a);
 		stack_a_size(s, "minus");
-		size = stack_b_size("add");
+		//size = 
+		stack_b_size("add");
 	}
 	return ;
 }

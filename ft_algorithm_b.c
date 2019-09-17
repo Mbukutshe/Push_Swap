@@ -49,13 +49,13 @@ int			ft_is_les(t_stack *head)
 	t_stack		*ptr;
 	t_stack		*c;
 	int			s;
-	int			size;
+	//int			size;
 
 	ptr = head;
 	s = stack_b_size("");
 	if (s > 1)
 	{
-		size = s;
+		//size = s;
 		while (ptr->next != NULL)
 			ptr = ptr->next;
 		c = head;

@@ -33,7 +33,7 @@ SRC_OBJ = ft_swap.c ft_push.c ft_rotate.c ft_reverse.c \
 
 OBJ_SRC = $(SRC_OBJ:.c=.o)
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g
 
 $(CHECKER) : 
 		gcc $(FLAGS) -c $(SRC)

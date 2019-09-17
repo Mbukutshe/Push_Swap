@@ -21,8 +21,8 @@ int		main(int c, char **av)
 
 	if ((a = (t_stack *)malloc(sizeof(t_stack))) == NULL)
 		return (0);
-	if ((b = (t_stack *)malloc(sizeof(t_stack))) == NULL)
-		return (0);
+	//if ((b = (t_stack *)malloc(sizeof(t_stack))) == NULL)
+		//return (0);   -- Need to be deleted as this causes the memory leak
 	b = NULL;
 	res = NULL;
 	if (c > 1 && ft_is_right(av))

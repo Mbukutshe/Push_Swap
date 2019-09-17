@@ -29,7 +29,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 		i++;
 	}
-	if (str1 != '\0' && i != n)
+	if (*str1 != '\0' && i != n)
 		return (-1);
 	return (0);
 }

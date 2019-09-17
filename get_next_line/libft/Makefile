@@ -124,7 +124,7 @@ FLAGS	= -Wall -Werror -Wextra
 
 all		: $(NAME)
 
-$(NAME) : $(SRC) Libft.h
+$(NAME) : $(SRC) libft.h
 		 gcc $(FLAGS) -I$(INCLUDES) -c $(SRC)
 		 ar rc $(NAME) $(OBJECTS)
 		 ranlib $(NAME)
