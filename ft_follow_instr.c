@@ -38,20 +38,3 @@ void		ft_follow(t_stack **a, t_stack **b, char *instr, int *s)
 		ft_reverse_both(a, b, *s);
 	return ;
 }
-
-void		ft_print(t_stack *head, int size)
-{
-	t_stack *current;
-
-	current = head;
-	if (size > 0)
-	{
-		while (current != NULL)
-		{
-			ft_putstr(ft_itoa(current->v));
-			ft_putchar('\t');
-			current = current->next;
-		}
-		ft_putendl("\n");
-	}
-}

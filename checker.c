@@ -22,8 +22,6 @@ int		main(int c, char **av)
 
 	if ((a = (t_stack *)malloc(sizeof(t_stack))) == NULL)
 		return (0);
-	if ((b = (t_stack *)malloc(sizeof(t_stack))) == NULL)
-		return (0);
 	b = NULL;
 	res = NULL;
 	if (c > 1 && ft_is_right(av))
@@ -36,7 +34,6 @@ int		main(int c, char **av)
 		}
 		ft_exec(&a, &b, &instr, size);
 	}
-	ft_print(a, size);
 	ft_free(&a, &b);
 	return (0);
 }

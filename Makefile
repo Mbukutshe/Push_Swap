@@ -49,7 +49,7 @@ $(PUSH_SWAP) :
 all : $(CHECKER) $(PUSH_SWAP)
 
 clean :
-		/bin/rm -f $(OBJ) $(SWAP_OBJ)
+	/bin/rm -f $(OBJ) $(SWAP_OBJ) get_next_line.o
 
 fclean : clean
 		/bin/rm -f $(CHECKER) $(PUSH_SWAP)
